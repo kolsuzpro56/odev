@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Beceri Sistemi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Beceri Sistemi</h1>
+
+    <form method="POST">
+        <input type="text" name="name" placeholder="İsmin" required>
+        <input type="text" name="skill" placeholder="Becerin" required>
+        <button type="submit">Gönder</button>
+    </form>
+
+    {% if name %}
+        <div class="result">
+            <h2>{{ name }}'in becerisi:</h2>
+            <p>{{ skill }}</p>
+        </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
